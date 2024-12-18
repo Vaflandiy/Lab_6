@@ -6,7 +6,7 @@ using namespace std;
 #include <algorithm>
 
 
-int get_first_digit(int number) {
+int find_first_digit_of_number(int number) {
     while (number > 9) {
         number = number / 10;
     }
@@ -22,17 +22,21 @@ int get_digit_multiplication(int number) {
     return m;
 }
 
-bool what_to_sort(int mi, int mj, int first_digit_i, int first_digit_j, int digits_multiplication_i, int digits_multiplication_j) {
-                    if ((first_digit_j == first_digit_j) && (digits_multiplication_j == digits_multiplication_i) && (mj < mi)) {
+bool what_to_sort(int mi, int mj, int first_digit_i, int first_digit_j, int digits_multiplication_i, int digits_multiplication_j) 
+{
+                    if ((first_digit_j == first_digit_j) && (digits_multiplication_j == digits_multiplication_i) && (mj < mi)) 
+                    {
                         return true;
                     }
-                    if ((first_digit_j == first_digit_i) && (digits_multiplication_j < digits_multiplication_i)) {
+                    if ((first_digit_j == first_digit_i) && (digits_multiplication_j < digits_multiplication_i)) 
+                    {
                         return true;
                     }
-                    if (first_digit_j < first_digit_i) {
+                    if (first_digit_j < first_digit_i) 
+                    {
                         return true;
                     }
-                    return false;
+                    return false; // Ну, если нечего сортировать...
 }
 
 
@@ -49,7 +53,7 @@ int main() {
     }
     
     for (int i = 0; i < number; i = i + 1) {
-        first_digits[i] = get_first_digit(m[i]);
+        first_digits[i] = find_first_digit_of_number(m[i]);
         digits_multiplication[i] = get_digit_multiplication(m[i]);
     }
     
