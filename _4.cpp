@@ -11,7 +11,7 @@ int main()
     const int Number_Maximum = 100;
     int matrix[Number_Maximum][Number_Maximum];
     int n, m;
-    cout << "Enter matrix n x m" << endl;
+    cout << "Введите строки и столбцы для матрицы" << endl;
     cin >> n >> m;
     
     for (int i = 0; i < n; i = i + 1) {
